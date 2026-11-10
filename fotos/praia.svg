@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d2c5c"/>
+      <stop offset=".45" stop-color="#e0705a"/>
+      <stop offset="1" stop-color="#ffc56e"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9784e"/>
+      <stop offset="1" stop-color="#2a1d3a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff2c8"/>
+      <stop offset=".4" stop-color="#ffd27a" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky)"/>
+  <circle cx="120" cy="118" r="60" fill="url(#sun)"/>
+  <circle cx="120" cy="118" r="20" fill="#fff0c4"/>
+  <rect y="118" width="300" height="82" fill="url(#sea)"/>
+  <g fill="#ffe1a0">
+    <rect x="98" y="123" width="44" height="2" rx="1" opacity=".8"/><rect x="104" y="130" width="32" height="2" rx="1" opacity=".6"/>
+    <rect x="110" y="138" width="20" height="2" rx="1" opacity=".5"/><rect x="113" y="146" width="14" height="1.6" rx=".8" opacity=".35"/>
+  </g>
+  <path d="M0,170 C60,162 130,166 190,160 S280,158 300,162 V200 H0Z" fill="#1a1222"/>
+  <!-- coqueiro -->
+  <g fill="#120c17">
+    <path d="M252,170 C250,140 254,110 266,84 L270,86 C260,110 258,140 260,170Z"/>
+    <path d="M268,84 C250,72 230,74 214,86 C232,80 250,82 266,90Z"/>
+    <path d="M268,84 C262,64 248,56 232,56 C248,62 258,72 264,88Z"/>
+    <path d="M268,84 C282,68 298,66 310,72 C296,72 284,78 272,90Z"/>
+    <path d="M268,84 C288,86 300,98 304,112 C294,100 282,94 270,90Z"/>
+    <path d="M268,84 C272,64 286,54 300,52 C288,60 278,72 272,88Z"/>
+  </g>
+  <!-- casal caminhando -->
+  <g fill="#120c17">
+    <circle cx="62" cy="146" r="3.6"/><path d="M58,151 L66,151 L67,166 L64,166 L62,158 L60,166 L57,166Z"/>
+    <circle cx="74" cy="147" r="3.3"/><path d="M71,152 L77,152 L81,166 L67,166Z"/>
+    <path d="M66,154 L71,155" stroke="#120c17" stroke-width="1.6"/>
+  </g>
+</svg>

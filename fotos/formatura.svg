@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f4f86"/>
+      <stop offset=".6" stop-color="#5f9bd1"/>
+      <stop offset="1" stop-color="#cfe6f5"/>
+    </linearGradient>
+    <radialGradient id="flare" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fffbe8"/>
+      <stop offset=".25" stop-color="#ffe9a8" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
+    </radialGradient>
+    <g id="cap">
+      <path d="M-16,0 L0,-7 L16,0 L0,7Z" fill="#14161c"/>
+      <path d="M-9,3 V9 C-4,12 4,12 9,9 V3 L0,7Z" fill="#0c0d11"/>
+      <path d="M0,0 L11,4 L12,14" fill="none" stroke="#f0ae4e" stroke-width="1.2"/>
+      <circle cx="12" cy="15" r="1.6" fill="#f0ae4e"/>
+    </g>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky)"/>
+  <circle cx="58" cy="40" r="70" fill="url(#flare)"/>
+  <circle cx="58" cy="40" r="11" fill="#fffdf2"/>
+  <g opacity=".35" fill="#fff"><circle cx="120" cy="86" r="6"/><circle cx="160" cy="112" r="3.5"/><circle cx="196" cy="134" r="9"/></g>
+  <g fill="#fff" opacity=".7">
+    <ellipse cx="220" cy="38" rx="34" ry="9"/><ellipse cx="240" cy="32" rx="20" ry="9"/><ellipse cx="120" cy="22" rx="22" ry="5"/>
+  </g>
+  <use href="#cap" transform="translate(110 62) rotate(-18)"/>
+  <use href="#cap" transform="translate(178 44) rotate(14) scale(.9)"/>
+  <use href="#cap" transform="translate(236 86) rotate(-30) scale(1.1)"/>
+  <use href="#cap" transform="translate(150 96) rotate(24) scale(.75)"/>
+  <use href="#cap" transform="translate(70 104) rotate(8) scale(.8)"/>
+  <!-- formandos com os braços para cima -->
+  <g fill="#10131a">
+    <path d="M0,200 V170 C10,160 26,160 34,170 L40,140 L44,141 L42,168 C48,160 62,158 72,166 L80,136 L84,137 L80,166 C90,156 106,158 114,168 C120,158 134,156 144,164 L150,132 L154,133 L150,164 C160,156 176,158 184,168 C190,160 204,158 214,166 L222,138 L226,139 L222,168 C232,158 248,160 256,170 C264,162 280,160 292,168 L298,146 L302,147 L300,200Z"/>
+    <circle cx="20" cy="158" r="9"/><circle cx="60" cy="154" r="9.5"/><circle cx="100" cy="156" r="9"/><circle cx="132" cy="152" r="9.5"/>
+    <circle cx="172" cy="156" r="9"/><circle cx="204" cy="152" r="9.5"/><circle cx="242" cy="158" r="9"/><circle cx="280" cy="156" r="9.5"/>
+  </g>
+</svg>

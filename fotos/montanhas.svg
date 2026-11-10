@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14203d"/>
+      <stop offset=".55" stop-color="#5a6c9a"/>
+      <stop offset="1" stop-color="#f2b87e"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6d3b0" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f6d3b0" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9a37a"/>
+      <stop offset="1" stop-color="#1b2440"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky)"/>
+  <g fill="#fff" opacity=".8"><circle cx="30" cy="18" r=".9"/><circle cx="80" cy="30" r=".7"/><circle cx="140" cy="12" r="1"/><circle cx="210" cy="24" r=".8"/><circle cx="262" cy="14" r="1"/><circle cx="180" cy="40" r=".6"/></g>
+  <path d="M0,120 L40,80 L70,100 L110,52 L150,96 L180,70 L220,104 L258,62 L300,98 V140 H0Z" fill="#3c4670"/>
+  <path d="M110,52 L122,66 L114,64 L106,70 L100,64Z M258,62 L268,74 L260,72 L252,78 L248,72Z" fill="#e8e2ee" opacity=".8"/>
+  <rect y="84" width="300" height="56" fill="url(#mist)"/>
+  <path d="M0,130 L50,100 L90,122 L140,92 L190,124 L240,98 L300,126 V140 H0Z" fill="#232b4a"/>
+  <!-- pinheiros -->
+  <g fill="#121730">
+    <path d="M20,140 L28,112 L36,140Z"/><path d="M34,140 L40,120 L46,140Z"/><path d="M262,140 L270,110 L278,140Z"/><path d="M278,140 L284,122 L290,140Z"/>
+  </g>
+  <rect y="140" width="300" height="60" fill="url(#lake)"/>
+  <path d="M0,140 L50,160 L90,148 L140,166 L190,146 L240,162 L300,144Z" fill="#232b4a" opacity=".35"/>
+  <g fill="#ffe0b8" opacity=".5"><rect x="60" y="152" width="40" height="1.4"/><rect x="150" y="160" width="60" height="1.4"/><rect x="90" y="172" width="80" height="1.2"/></g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1834"/>
+      <stop offset=".45" stop-color="#b44a3e"/>
+      <stop offset=".75" stop-color="#f0a050"/>
+      <stop offset="1" stop-color="#ffd99a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff4d6"/>
+      <stop offset=".35" stop-color="#ffd27a" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dust" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc77a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffc77a" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky)"/>
+  <circle cx="205" cy="128" r="70" fill="url(#sun)"/>
+  <circle cx="205" cy="128" r="17" fill="#fff1cc"/>
+  <path d="M0,140 C40,128 80,134 120,126 S200,120 240,128 S290,124 300,126 V200 H0Z" fill="#7a3328" opacity=".55"/>
+  <path d="M0,152 C50,144 110,150 160,145 S250,140 300,146 V200 H0Z" fill="#4a1f1c" opacity=".8"/>
+  <rect y="120" width="300" height="80" fill="url(#dust)"/>
+  <!-- cerca -->
+  <g fill="#1a0c0a">
+    <rect x="8" y="150" width="4" height="34"/><rect x="58" y="152" width="4" height="32"/><rect x="250" y="150" width="4" height="34"/><rect x="290" y="149" width="4" height="35"/>
+    <rect x="0" y="158" width="70" height="2.5"/><rect x="0" y="168" width="70" height="2.5"/>
+    <rect x="240" y="157" width="60" height="2.5"/><rect x="240" y="167" width="60" height="2.5"/>
+  </g>
+  <!-- cavalo empinando e cavaleiro -->
+  <g transform="translate(96 76) scale(1.25)" fill="#140806">
+    <path d="M30,42 C34,34 48,30 62,33 C72,35 80,38 84,46 C88,54 86,62 80,66 L84,84 L80,85 L74,68 C66,70 58,70 52,68 L46,86 L42,85 L45,66 C40,62 36,58 34,54 L26,44 L14,36 C12,32 14,30 18,32 L22,34 C20,28 16,22 12,18 C10,16 8,12 10,10 L14,8 C16,6 20,8 21,10 L30,24 C32,28 32,34 30,42Z"/>
+    <path d="M84,46 C92,46 98,54 98,66 C96,58 92,54 86,54Z"/>
+    <path d="M22,34 L10,42 L6,40 L16,32Z"/>
+    <path d="M18,24 L6,30 L4,27 L14,21Z"/>
+    <path d="M50,34 L52,12 L60,12 L60,34Z"/>
+    <circle cx="56" cy="7" r="4.2"/>
+    <ellipse cx="56" cy="3.2" rx="8" ry="1.6"/>
+    <rect x="52.5" y="-1" width="7" height="4" rx="1.5"/>
+    <path d="M59,15 L72,-2" stroke="#140806" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="78" cy="-8" rx="10" ry="3.6" fill="none" stroke="#140806" stroke-width="1.4" transform="rotate(-18 78 -8)"/>
+  </g>
+  <rect y="182" width="300" height="18" fill="#140806"/>
+</svg>

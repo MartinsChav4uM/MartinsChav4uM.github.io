@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestão Fotográfica — Fotos, vendas e finanças</title>
+  <meta name="description" content="Vendas, galeria com RAW, recibos, eventos e financeiro. O app para Windows que organiza o negócio do fotógrafo, sem planilhas.">
+  <meta name="theme-color" content="#0E1015">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preload" href="fontes/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Abertura: a mesma tela de abertura do app (SplashWindow) -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-card">
+      <div class="splash-glow"></div>
+      <div class="splash-logo">
+        <svg class="splash-iris" viewBox="-100 -100 200 200"><g id="splashBlades"></g></svg>
+        <img src="logo.svg" alt="" width="76" height="76">
+      </div>
+      <b>Gestão Fotográfica</b>
+      <span class="splash-sub">Fotos, vendas e finanças</span>
+      <div class="splash-bar"><i></i></div>
+      <small>Carregando...</small>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="Gestão Fotográfica — início">
+      <img src="logo.svg" alt="" class="brand-mark" width="32" height="32">
+      <span>Gestão <b>Fotográfica</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Seções">
+      <span class="nav-lens" aria-hidden="true"><i></i></span>
+      <a href="#recursos">Recursos</a>
+      <a href="#fluxo">Como funciona</a>
+      <a href="#tema">Aparência</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a href="#teste" class="btn btn-sm btn-accent">Baixar</a>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-flash" id="heroFlash" aria-hidden="true"></div>
+      <div class="aperture-wrap" aria-hidden="true">
+        <svg class="aperture" viewBox="-100 -100 200 200">
+          <defs>
+            <radialGradient id="lens" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#FFE7BF"/>
+              <stop offset=".3" stop-color="#F0AE4E"/>
+              <stop offset=".65" stop-color="#D9822B"/>
+              <stop offset="1" stop-color="#14100A"/>
+            </radialGradient>
+            <linearGradient id="bladeG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#232837"/>
+              <stop offset="1" stop-color="#0E1015"/>
+            </linearGradient>
+            <clipPath id="lensClip"><circle r="96"/></clipPath>
+          </defs>
+          <circle r="96" fill="url(#lens)"/>
+          <g id="blades" clip-path="url(#lensClip)"></g>
+          <circle r="96.5" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+          <circle r="99.5" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="hero-copy">
+        <h1 class="hero-title reveal">Seu estúdio,<br><em>em foco.</em></h1>
+        <p class="hero-sub reveal">
+          Fotos, vendas e finanças.<br class="br-d">
+          O app que organiza o negócio do fotógrafo, para você voltar a pensar só em luz.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#teste" class="btn btn-accent">Baixar a versão de teste</a>
+          <a href="#recursos" class="btn btn-ghost">Conhecer o app <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <!-- Faixa de filme com fotos passando devagar -->
+      <div class="film" aria-hidden="true">
+        <div class="film-track" id="filmTrack">
+          <i><img src="fotos/rodeio.svg" alt=""></i><i data-raw><img src="fotos/casamento.svg" alt=""></i><i><img src="fotos/formatura.svg" alt=""></i><i><img src="fotos/festa.svg" alt=""></i><i data-raw><img src="fotos/retrato.svg" alt=""></i><i><img src="fotos/praia.svg" alt=""></i><i><img src="fotos/montanhas.svg" alt=""></i><i data-raw><img src="fotos/cidade.svg" alt=""></i>
+          <i><img src="fotos/rodeio.svg" alt=""></i><i data-raw><img src="fotos/casamento.svg" alt=""></i><i><img src="fotos/formatura.svg" alt=""></i><i><img src="fotos/festa.svg" alt=""></i><i data-raw><img src="fotos/retrato.svg" alt=""></i><i><img src="fotos/praia.svg" alt=""></i><i><img src="fotos/montanhas.svg" alt=""></i><i data-raw><img src="fotos/cidade.svg" alt=""></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-label="Feito para todo tipo de fotografia">
+      <div class="marquee-track">
+        <span>Casamentos</span><i>✦</i><span>Rodeios</span><i>✦</i><span>Ensaios</span><i>✦</i><span>Formaturas</span><i>✦</i><span>Eventos</span><i>✦</i><span>Esportes</span><i>✦</i><span>Festas</span><i>✦</i><span>Newborn</span><i>✦</i>
+        <span aria-hidden="true">Casamentos</span><i>✦</i><span aria-hidden="true">Rodeios</span><i>✦</i><span aria-hidden="true">Ensaios</span><i>✦</i><span aria-hidden="true">Formaturas</span><i>✦</i><span aria-hidden="true">Eventos</span><i>✦</i><span aria-hidden="true">Esportes</span><i>✦</i><span aria-hidden="true">Festas</span><i>✦</i><span aria-hidden="true">Newborn</span><i>✦</i>
+      </div>
+    </section>
+
+    <!-- STATEMENT: visor de câmera. Ao rolar, o foco "puxa" e a câmera dispara. -->
+    <section class="shot" id="shot">
+      <div class="shot-sticky">
+        <div class="viewfinder" id="viewfinder">
+          <span class="vf-c tl"></span><span class="vf-c tr"></span><span class="vf-c bl"></span><span class="vf-c br"></span>
+          <div class="vf-top" aria-hidden="true">
+            <span class="vf-mode">AF-S</span>
+            <span class="vf-rec"><i></i> <b id="vfState">Focando…</b></span>
+            <span class="vf-bat"><i></i></span>
+          </div>
+          <div class="vf-focus" id="vfFocus" aria-hidden="true"></div>
+          <p class="statement-text" id="statement">
+            Você não virou fotógrafo para viver dentro de planilhas, cadernos e recibos escritos à mão. Você virou fotógrafo para <em>criar.</em>
+          </p>
+          <div class="vf-bottom" aria-hidden="true">
+            <span>f/1.8</span><span>1/250</span><span>ISO 400</span>
+            <span class="vf-meter"><i></i><i></i><i></i><b></b><i></i><i></i><i></i></span>
+            <span class="vf-count">[<b id="vfCount">36</b>]</span>
+          </div>
+          <svg class="vf-shutter" viewBox="-100 -100 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g id="shutterBlades"></g>
+          </svg>
+          <div class="vf-flash" id="vfFlash" aria-hidden="true"></div>
+          <span class="vf-caption" aria-hidden="true">Gestão Fotográfica · seu estúdio, em foco</span>
+        </div>
+        <p class="shot-hint" id="shotHint" aria-hidden="true">Role para focar <span>↓</span></p>
+      </div>
+    </section>
+
+    <!-- BENTO -->
+    <section class="features" id="recursos">
+      <header class="sec-head">
+        <p class="eyebrow">Recursos</p>
+        <h2 class="reveal">Um estúdio inteiro.<br><em>Em uma janela.</em></h2>
+      </header>
+
+      <div class="bento">
+        <article class="tile t-gal reveal">
+          <div class="tile-copy">
+            <h3><span class="ico">🖼</span> Galeria que entende RAW</h3>
+            <p>Importe pastas inteiras de JPEG, TIFF e RAW de Canon, Nikon, Sony, Fuji e outras. Miniaturas na hora, duplicadas detectadas pelo conteúdo e seus originais <b>nunca</b> são tocados.</p>
+          </div>
+          <div class="grid-photos" aria-hidden="true">
+            <figure><i class="ill" style="background-image:url(fotos/rodeio.svg)"></i><figcaption>Disponível · 14/06</figcaption></figure>
+            <figure><i class="ill" style="background-image:url(fotos/casamento.svg)" data-raw></i><figcaption>Favorita · 14/06</figcaption></figure>
+            <figure><i class="ill" style="background-image:url(fotos/formatura.svg)"></i><figcaption>Vendida · 14/06</figcaption></figure>
+            <figure><i class="ill" style="background-image:url(fotos/praia.svg)" data-raw></i><figcaption>Selecionada · 14/06</figcaption></figure>
+          </div>
+        </article>
+
+        <article class="tile t-fin reveal">
+          <div class="tile-copy">
+            <h3><span class="ico">📊</span> Painel financeiro</h3>
+            <p>Faturamento, recebido, despesas e resultado. Ticket médio, melhor dia e comparativo com o período anterior.</p>
+          </div>
+          <div class="ring" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" class="ring-bg"/>
+              <circle cx="60" cy="60" r="50" class="ring-fg" pathLength="100"/>
+            </svg>
+            <div class="ring-label"><b>86%</b><small>já recebido</small></div>
+          </div>
+        </article>
+
+        <article class="tile t-rec reveal">
+          <div class="tile-copy">
+            <h3><span class="ico">🧾</span> Recibo em um clique</h3>
+            <p>Recibo com os dados do seu estúdio em PDF, ou copie como imagem e cole direto no WhatsApp.</p>
+          </div>
+          <div class="receipt" aria-hidden="true">
+            <div class="rc-head"><img src="logo.svg" alt="" class="rc-logo"><div><b>Seu Estúdio</b><small>Recibo nº 0142 · Ana Martins</small></div></div>
+            <div class="rc-line"><span>12 fotos digitais</span><span>R$ 480,00</span></div>
+            <div class="rc-line"><span>Impressão 30×40</span><span>R$ 120,00</span></div>
+            <div class="rc-tot"><span>Total</span><b>R$ 600,00</b></div>
+            <span class="rc-stamp">PAGO</span>
+          </div>
+        </article>
+
+        <article class="tile t-evt reveal">
+          <div class="tile-copy">
+            <h3><span class="ico">📍</span> Descubra onde você lucra</h3>
+            <p>Compare eventos e locais lado a lado. Vender muito nem sempre significa lucrar mais, e o app mostra a diferença.</p>
+          </div>
+          <div class="bars" aria-hidden="true">
+            <div class="bar-row"><span>Rodeio</span><i style="--v:1"></i></div>
+            <div class="bar-row"><span>Casamento</span><i style="--v:.78"></i></div>
+            <div class="bar-row"><span>Formatura</span><i style="--v:.55"></i></div>
+            <div class="bar-row"><span>Festa</span><i style="--v:.34"></i></div>
+          </div>
+        </article>
+
+        <article class="tile t-sale reveal">
+          <div class="tile-copy">
+            <h3><span class="ico">📷</span> Fotos ligadas às vendas</h3>
+            <p>Escolha as fotos da galeria e elas viram itens da venda. A foto vendida é marcada, e o app avisa se ela já foi vendida antes.</p>
+          </div>
+          <div class="chips" aria-hidden="true">
+            <span class="chip">Disponível</span><span class="chip">Favorita</span><span class="chip sel">Selecionada</span><span class="chip sold">Vendida</span><span class="chip">Arquivada</span>
+          </div>
+        </article>
+
+        <article class="tile t-cli reveal">
+          <div class="tile-copy">
+            <h3><span class="ico">👥</span> Clientes e despesas</h3>
+            <p>Cada cliente com seu histórico de compras. Cada despesa na categoria certa, paga ou pendente.</p>
+          </div>
+          <div class="mini-table" aria-hidden="true">
+            <div class="mt-row mt-h"><span>Despesa</span><span>Categoria</span><span>Valor</span></div>
+            <div class="mt-row"><span>Combustível</span><span>Transporte</span><span class="neg">R$ 180,00</span></div>
+            <div class="mt-row"><span>Cartão SD 128 GB</span><span>Equipamento</span><span class="neg">R$ 149,90</span></div>
+            <div class="mt-row"><span>Hospedagem</span><span>Viagem</span><span class="warn">Pendente</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FLOW / STICKY STORY -->
+    <section class="flow" id="fluxo">
+      <header class="sec-head">
+        <p class="eyebrow">Como funciona</p>
+        <h2 class="reveal">Do cartão de memória<br><em>ao dinheiro no caixa.</em></h2>
+      </header>
+
+      <div class="flow-wrap">
+        <div class="flow-steps">
+          <div class="flow-rail" aria-hidden="true"><span class="flow-fill" id="flowFill"></span><i data-dot="0"></i><i data-dot="1"></i><i data-dot="2"></i><i data-dot="3"></i></div>
+          <article class="step" data-step="0">
+            <span class="step-big" aria-hidden="true">01</span>
+            <span class="step-n">01</span>
+            <h3>Importe as fotos.</h3>
+            <p>Aponte a pasta do evento. O app cataloga tudo em segundo plano, inclusive RAW, sem mover nem copiar nada.</p>
+            <div class="step-chips"><span>RAW</span><span>JPEG</span><span>TIFF</span><span>Duplicadas ignoradas</span></div>
+          </article>
+          <article class="step" data-step="1">
+            <span class="step-big" aria-hidden="true">02</span>
+            <span class="step-n">02</span>
+            <h3>Registre a venda.</h3>
+            <p>Escolha o cliente, adicione as fotos do catálogo e receba à vista, parcelado ou depois.</p>
+            <div class="step-chips"><span>À vista</span><span>Parcelado</span><span>Pagamento depois</span></div>
+          </article>
+          <article class="step" data-step="2">
+            <span class="step-big" aria-hidden="true">03</span>
+            <span class="step-n">03</span>
+            <h3>Envie o recibo.</h3>
+            <p>Um clique gera o recibo com os dados do seu estúdio. Copie a imagem e mande pelo WhatsApp.</p>
+            <div class="step-chips"><span>PDF</span><span>Imagem</span><span>WhatsApp</span></div>
+          </article>
+          <article class="step" data-step="3">
+            <span class="step-big" aria-hidden="true">04</span>
+            <span class="step-n">04</span>
+            <h3>Veja o resultado.</h3>
+            <p>Compare eventos e locais e descubra qual trabalho realmente valeu a pena.</p>
+            <div class="step-chips"><span>Por evento</span><span>Por local</span><span>Resultado estimado</span></div>
+          </article>
+        </div>
+
+        <div class="flow-visual" aria-hidden="true">
+          <div class="flow-stage" id="flowStage">
+          <div class="flow-glow" id="flowGlow"></div>
+          <div class="flow-counter"><b id="flowNum">01</b> / 04</div>
+          <div class="toast" data-for="0">✓ 248 fotos importadas</div>
+          <div class="toast" data-for="1">✓ Venda registrada · R$ 200,00</div>
+          <div class="toast" data-for="2">✓ Recibo copiado. Cole no WhatsApp</div>
+          <div class="toast" data-for="3">🏆 Melhor resultado: Casamento Lima</div>
+          <div class="mini-win">
+            <div class="win-bar sm">
+              <img src="logo.svg" alt="" class="win-ico">
+              <span class="win-title">Gestão Fotográfica</span>
+              <span class="win-ctl"><i>—</i><i>▢</i><i>✕</i></span>
+            </div>
+            <div class="mini-body">
+              <div class="rail">
+                <img src="logo.svg" alt="">
+                <i>📊</i><i data-for="0" class="r-on">🖼</i><i data-for="1 2">🧾</i><i>💸</i><i data-for="3">📍</i><i>👥</i><i>🛡</i><i>⚙</i>
+              </div>
+              <div class="screen">
+                <!-- 0: Galeria importando -->
+                <div class="scr scr-0 on">
+                  <div class="scr-head"><p class="scr-t">Galeria</p><span class="app-btn primary">＋ Importar pasta</span></div>
+                  <div class="app-card import">
+                    <small>Importando 248 de 248 · Rodeio de Junho</small>
+                    <div class="progress"><span></span></div>
+                  </div>
+                  <div class="thumbs">
+                    <i class="ill" style="background-image:url(fotos/retrato.svg)"></i><i class="ill" style="background-image:url(fotos/festa.svg)" data-raw></i><i class="ill" style="background-image:url(fotos/montanhas.svg)"></i><i class="ill" style="background-image:url(fotos/cidade.svg)"></i>
+                    <i class="ill" style="background-image:url(fotos/rodeio.svg)" data-raw></i><i class="ill" style="background-image:url(fotos/casamento.svg)"></i><i class="ill" style="background-image:url(fotos/formatura.svg)"></i><i class="ill" style="background-image:url(fotos/praia.svg)" data-raw></i>
+                  </div>
+                  <p class="scr-foot">248 fotografias · 96 RAW · 3 duplicadas ignoradas</p>
+                </div>
+                <!-- 1: Nova venda -->
+                <div class="scr scr-1">
+                  <div class="scr-head"><p class="scr-t">Nova venda</p></div>
+                  <div class="field"><small>Cliente</small><b>Ana Martins</b></div>
+                  <div class="field"><small>Evento</small><b>Rodeio de Junho</b></div>
+                  <div class="items">
+                    <div class="it"><span class="th ill" style="background-image:url(fotos/retrato.svg)"></span><span>Foto digital · IMG_0412.CR3</span><b>R$ 40,00</b></div>
+                    <div class="it"><span class="th ill" style="background-image:url(fotos/festa.svg)"></span><span>Foto digital · IMG_0419.CR3</span><b>R$ 40,00</b></div>
+                    <div class="it"><span class="th ill" style="background-image:url(fotos/montanhas.svg)"></span><span>Impressão 30×40</span><b>R$ 120,00</b></div>
+                  </div>
+                  <div class="scr-row"><span class="app-btn">📷 Adicionar fotos do catálogo…</span><span class="app-btn primary">Salvar venda</span></div>
+                </div>
+                <!-- 2: Recibo -->
+                <div class="scr scr-2">
+                  <div class="scr-head"><p class="scr-t">Recibo</p></div>
+                  <div class="receipt mini">
+                    <div class="rc-head"><img src="logo.svg" alt="" class="rc-logo"><div><b>Seu Estúdio</b><small>Recibo nº 0142 · Ana Martins</small></div></div>
+                    <div class="rc-line"><span>2 fotos digitais</span><span>R$ 80,00</span></div>
+                    <div class="rc-line"><span>Impressão 30×40</span><span>R$ 120,00</span></div>
+                    <div class="rc-tot"><span>Total</span><b>R$ 200,00</b></div>
+                    <span class="rc-stamp">PAGO</span>
+                  </div>
+                  <div class="scr-row"><span class="app-btn">Abrir PDF</span><span class="app-btn">Salvar PDF…</span><span class="app-btn primary">Copiar imagem</span></div>
+                </div>
+                <!-- 3: Eventos -->
+                <div class="scr scr-3">
+                  <div class="scr-head"><p class="scr-t">Eventos</p><span class="app-combo">Por evento <i>▾</i></span></div>
+                  <div class="hl-row">
+                    <div class="app-card hl"><small>Quem mais faturou</small><b>Rodeio de Junho</b></div>
+                    <div class="app-card hl"><small>Melhor resultado</small><b>Casamento Lima</b></div>
+                  </div>
+                  <div class="mini-table">
+                    <div class="mt-row mt-h"><span>Evento</span><span>Faturamento</span><span>Resultado</span></div>
+                    <div class="mt-row"><span>Rodeio de Junho</span><span>R$ 9.600</span><span class="pos">R$ 5.840</span></div>
+                    <div class="mt-row"><span>Casamento Lima</span><span>R$ 7.200</span><span class="pos">R$ 6.120</span></div>
+                    <div class="mt-row"><span>Formatura 3º ano</span><span>R$ 3.900</span><span class="warn">sem despesas</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMA: Galeria com troca claro/escuro, como em Configurações → Aparência -->
+    <section class="tema" id="tema">
+      <header class="sec-head">
+        <p class="eyebrow">Aparência</p>
+        <h2 class="reveal">Claro ou escuro.<br><em>Experimente aqui.</em></h2>
+      </header>
+
+      <div class="seg reveal" role="radiogroup" aria-label="Tema da janela de exemplo">
+        <button type="button" role="radio" aria-checked="false" data-tema="claro">☀ Claro</button>
+        <button type="button" role="radio" aria-checked="true" data-tema="escuro">☾ Escuro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema="windows">🖥 Igual ao Windows</button>
+        <span class="seg-pill" aria-hidden="true"></span>
+      </div>
+
+      <div class="window gal-win reveal" id="galWin" aria-hidden="true">
+        <div class="win-bar">
+          <img src="logo.svg" alt="" class="win-ico">
+          <span class="win-title">Gestão Fotográfica</span>
+          <span class="win-ctl"><i>—</i><i>▢</i><i>✕</i></span>
+        </div>
+        <div class="win-body">
+          <aside class="app-side">
+            <div class="side-glow"></div>
+            <div class="app-brand">
+              <img src="logo.svg" alt="">
+              <div><b>Gestão Fotográfica</b><small>Fotos, vendas e finanças</small></div>
+            </div>
+            <div class="app-nav">
+              <div class="nav-it"><i>📊</i>Painel</div>
+              <div class="nav-it on"><i>🖼</i>Galeria</div>
+              <div class="nav-it"><i>🧾</i>Vendas</div>
+              <div class="nav-it"><i>💸</i>Despesas</div>
+              <div class="nav-it"><i>📍</i>Eventos</div>
+              <div class="nav-it"><i>👥</i>Clientes</div>
+              <div class="nav-it"><i>🛡</i>Backup</div>
+              <div class="nav-it"><i>⚙</i>Configurações</div>
+            </div>
+          </aside>
+          <div class="app-main">
+            <div class="app-glow"></div>
+            <div class="app-head">
+              <h3>Galeria</h3>
+              <div class="app-actions">
+                <span class="app-btn hide-s">Verificar arquivos</span>
+                <span class="app-btn hide-s">Importar arquivos…</span>
+                <span class="app-btn primary">＋ Importar pasta</span>
+              </div>
+            </div>
+            <div class="filters">
+              <label><small>Buscar (nome ou câmera)</small><span class="app-combo wide">Canon R6</span></label>
+              <label><small>Status</small><span class="app-combo">Todos <i>▾</i></span></label>
+              <label class="hide-s"><small>Evento</small><span class="app-combo">Rodeio de Junho <i>▾</i></span></label>
+              <label class="hide-s"><small>Formato</small><span class="app-combo">Todos <i>▾</i></span></label>
+            </div>
+            <div class="gal-body">
+              <div class="app-card folders">
+                <p class="card-t">Pastas</p>
+                <div class="fd on">📁 Rodeio de Junho</div>
+                <div class="fd sub">📁 Montaria</div>
+                <div class="fd sub">📁 Tambor</div>
+                <div class="fd">📁 Casamento Lima</div>
+                <div class="fd">📁 Formatura 3º ano</div>
+              </div>
+              <div class="gal-grid">
+                <figure><i class="ill" style="background-image:url(fotos/cidade.svg)"></i><figcaption>Disponível · 14/06/2026</figcaption></figure>
+                <figure class="pick"><i class="ill" style="background-image:url(fotos/rodeio.svg)" data-raw></i><figcaption>Selecionada · 14/06/2026</figcaption></figure>
+                <figure><i class="ill" style="background-image:url(fotos/casamento.svg)"></i><figcaption>Vendida · 14/06/2026</figcaption></figure>
+                <figure><i class="ill" style="background-image:url(fotos/formatura.svg)" data-raw></i><figcaption>Favorita · 14/06/2026</figcaption></figure>
+                <figure class="pick"><i class="ill" style="background-image:url(fotos/praia.svg)"></i><figcaption>Selecionada · 14/06/2026</figcaption></figure>
+                <figure><i class="ill" style="background-image:url(fotos/retrato.svg)" data-raw></i><figcaption>Disponível · 14/06/2026</figcaption></figure>
+                <figure><i class="ill" style="background-image:url(fotos/festa.svg)"></i><figcaption>Vendida · 14/06/2026</figcaption></figure>
+                <figure><i class="ill" style="background-image:url(fotos/montanhas.svg)"></i><figcaption>Disponível · 14/06/2026</figcaption></figure>
+              </div>
+            </div>
+            <div class="gal-foot">
+              <span class="muted">248 fotografias · 2 selecionadas</span>
+              <span class="mark-as"><span class="muted hide-s">Marcar selecionadas como:</span><span class="app-btn">Favorita</span><span class="app-btn">Vendida</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="safe" id="seguranca">
+      <header class="sec-head">
+        <p class="eyebrow">Segurança</p>
+        <h2 class="reveal">Suas fotos são sagradas.<br><em>O app sabe disso.</em></h2>
+      </header>
+      <div class="safe-grid">
+        <div class="safe-item reveal">
+          <span class="safe-ic">🖼</span>
+          <h3>Originais intocados</h3>
+          <p>O app nunca move, renomeia ou apaga um arquivo ao importar. Ele só cataloga.</p>
+        </div>
+        <div class="safe-item reveal">
+          <span class="safe-ic">🛡</span>
+          <h3>Backup verificado</h3>
+          <p>Cópias com verificação de integridade, lembrete automático e restauração em um computador novo.</p>
+        </div>
+        <div class="safe-item reveal">
+          <span class="safe-ic">💻</span>
+          <h3>Seus dados, seu computador</h3>
+          <p>Tudo fica salvo na sua máquina. Funciona sem internet e sem mensalidade de nuvem.</p>
+        </div>
+        <div class="safe-item reveal">
+          <span class="safe-ic">⚙</span>
+          <h3>Claro ou escuro</h3>
+          <p>Tema claro, escuro ou igual ao Windows. Confortável na edição noturna.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMISES -->
+    <section class="promises">
+      <div class="promise reveal"><b>1</b><span>app para o estúdio inteiro</span></div>
+      <div class="promise reveal"><b>0</b><span>planilhas espalhadas</span></div>
+      <div class="promise reveal"><b>19</b><span>formatos RAW suportados</span></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="duvidas">
+      <header class="sec-head">
+        <p class="eyebrow">Dúvidas</p>
+        <h2 class="reveal">Perguntas<br><em>frequentes.</em></h2>
+      </header>
+      <div class="faq-list">
+        <details class="reveal">
+          <summary>Em quais computadores funciona?</summary>
+          <p>No Windows 10 (versão 2004 ou mais nova) e no Windows 11, 64 bits. O instalador já traz tudo o que o app precisa: não é preciso instalar mais nada, nem ter senha de administrador.</p>
+        </details>
+        <details class="reveal">
+          <summary>Precisa de internet?</summary>
+          <p>Os seus dados ficam sempre no seu computador e nada é enviado para nós. A <b>versão completa</b> funciona sem internet, até num evento sem sinal. A <b>versão de teste</b> precisa de internet ao abrir: ela consulta o GitHub para conferir se a versão está atualizada e a data do período de teste. Nessa consulta não vai nenhum dado seu, só o pedido da versão.</p>
+        </details>
+        <details class="reveal">
+          <summary>Como funciona a versão de teste?</summary>
+          <p>É gratuita e tem todas as funções. Ela funciona por 30 dias, contados a partir da primeira vez que você abre o app. Depois disso o app não abre mais, mas os seus dados continuam guardados no computador e voltam a funcionar ao instalar a versão completa. Não pedimos cartão nem cadastro. As regras completas estão nos <a href="termos.html">Termos de uso</a>.</p>
+        </details>
+        <details class="reveal">
+          <summary>Quais dados vocês coletam?</summary>
+          <p>Nenhum. Este site não usa cookies, não tem formulário e não usa ferramentas de análise ou de publicidade. O app guarda tudo só no seu computador. Os detalhes estão na <a href="privacidade.html">Política de privacidade</a>.</p>
+        </details>
+        <details class="reveal">
+          <summary>O app mexe nas minhas fotos?</summary>
+          <p>Nunca. Ao importar, ele só cataloga: guarda o caminho, os dados da câmera e uma miniatura própria. Os arquivos originais não são movidos, copiados, renomeados nem apagados.</p>
+        </details>
+        <details class="reveal">
+          <summary>Ele edita ou revela arquivos RAW?</summary>
+          <p>Não, o app não é um editor. Ele lê a prévia que a câmera grava dentro do RAW para mostrar as miniaturas e o visualizador, e o arquivo RAW fica intacto.</p>
+        </details>
+        <details class="reveal">
+          <summary>E se eu trocar de computador?</summary>
+          <p>Faça um backup pelo próprio app e restaure no computador novo. O backup é verificado antes de ser aceito, e o app ainda pode copiar as fotos originais para a pasta de backup.</p>
+        </details>
+        <details class="reveal">
+          <summary>O recibo tem valor fiscal?</summary>
+          <p>Não. É um comprovante de venda com os dados do seu estúdio, e isso vem escrito no rodapé. Serve para enviar ao cliente por PDF ou imagem.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="teste">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <img src="logo.svg" alt="" class="cta-logo reveal" width="84" height="84">
+      <p class="eyebrow reveal"><span class="dot"></span> Para Windows 10 e 11</p>
+      <h2 class="reveal">Baixe a versão<br><em>de teste.</em></h2>
+      <p class="cta-sub reveal">Experimente no seu estúdio com todas as funções. Sem cadastro e sem cartão.</p>
+      <!-- O instalador vem sempre da última release do GitHub (script.js). Trocar o repositório só aqui. -->
+      <div class="download reveal" id="download" data-repo="MartinsChav4uM/gestao-fotografica" data-arquivo="Instalar-Gestao-Fotografica-Teste.exe">
+        <a class="btn btn-accent btn-lg" id="baixar" href="#instalar" aria-disabled="true">Procurando a versão mais recente...</a>
+        <p class="download-info" id="download-info" aria-live="polite">O download vem direto do GitHub, onde ficam as versões publicadas.</p>
+        <p class="download-legal">Ao instalar, você aceita os <a href="termos.html">Termos de uso</a>, que o instalador mostra antes de começar. Leia também a <a href="privacidade.html">Política de privacidade</a>.</p>
+        <p class="download-legal"><a href="#instalar">Veja o passo a passo da instalação ↓</a></p>
+      </div>
+    </section>
+
+    <!-- Como instalar -->
+    <section class="install" id="instalar">
+      <header class="sec-head">
+        <p class="eyebrow">Instalação</p>
+        <h2 class="reveal">Como instalar,<br><em>passo a passo.</em></h2>
+      </header>
+      <ol class="install-steps">
+        <li class="reveal"><b>Baixe o instalador.</b> Clique em “Baixar” acima. O arquivo <code>Instalar-Gestao-Fotografica-Teste.exe</code> vai para a pasta Downloads. Se o navegador perguntar, escolha “Manter”.</li>
+        <li class="reveal"><b>Abra o arquivo.</b> Dê dois cliques nele, na pasta Downloads ou na lista de downloads do navegador.</li>
+        <li class="reveal"><b>Se aparecer “O Windows protegeu o computador”</b> (uma tela azul), clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>. Isso acontece porque o programa é novo e ainda não tem uma assinatura digital paga. Ele não traz vírus nem propaganda.</li>
+        <li class="reveal"><b>Leia e aceite os Termos de uso</b> na primeira tela do instalador, e depois clique em <b>Avançar</b>, <b>Avançar</b> e <b>Instalar</b>. Não precisa de senha de administrador. Se o Windows pedir para instalar o “Visual C++”, clique em <b>Sim</b>: é um componente da própria Microsoft.</li>
+        <li class="reveal"><b>Abra o app.</b> No final, deixe marcado “Abrir o Gestão Fotográfica agora” e clique em <b>Concluir</b>. Depois ele fica no menu Iniciar e, se você quiser, na Área de Trabalho. O manual de uso está em Configurações.</li>
+        <li class="reveal"><b>Conectado à internet</b> na hora de abrir: a versão de teste confere a versão no GitHub. Se houver uma versão nova, o app avisa. É só baixar aqui de novo e instalar por cima, e os seus dados são mantidos.</li>
+      </ol>
+      <p class="install-note reveal">Para desinstalar: Configurações do Windows › Aplicativos › Gestão Fotográfica › Desinstalar. O desinstalador pergunta se você também quer apagar os dados. Suas fotografias originais e seus backups nunca são apagados.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="foot-brand"><img src="logo.svg" alt="" width="22" height="22"> © <span id="year"></span> Gestão Fotográfica</span>
+    <nav class="foot-links" aria-label="Informações legais">
+      <a href="termos.html">Termos de uso</a>
+      <a href="privacidade.html">Política de privacidade</a>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

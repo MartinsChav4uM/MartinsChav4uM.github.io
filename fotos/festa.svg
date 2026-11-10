@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#120a24"/>
+      <stop offset="1" stop-color="#3a1240"/>
+    </linearGradient>
+    <filter id="b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb347" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beam2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d36bff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#d36bff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#bg)"/>
+  <path d="M70,0 L20,170 L120,170Z" fill="url(#beam)"/>
+  <path d="M230,0 L180,170 L290,170Z" fill="url(#beam2)"/>
+  <path d="M150,0 L110,170 L190,170Z" fill="url(#beam)" opacity=".6"/>
+  <g filter="url(#b)">
+    <circle cx="40" cy="50" r="12" fill="#ff8a3d" opacity=".7"/><circle cx="96" cy="80" r="16" fill="#f0ae4e" opacity=".6"/>
+    <circle cx="190" cy="40" r="14" fill="#ff5fa2" opacity=".55"/><circle cx="250" cy="90" r="18" fill="#ffb347" opacity=".55"/>
+    <circle cx="150" cy="60" r="10" fill="#9b7bff" opacity=".6"/><circle cx="276" cy="30" r="10" fill="#ff6a5c" opacity=".6"/>
+  </g>
+  <g filter="url(#b2)" fill="#ffe2a8">
+    <circle cx="60" cy="24" r="3"/><circle cx="128" cy="34" r="2.5"/><circle cx="214" cy="68" r="3"/><circle cx="20" cy="110" r="2.5"/><circle cx="170" cy="100" r="2"/>
+  </g>
+  <g fill="#ffe2a8">
+    <circle cx="70" cy="120" r="1.2"/><circle cx="140" cy="20" r="1"/><circle cx="238" cy="54" r="1.2"/><circle cx="110" cy="58" r="1"/>
+  </g>
+  <!-- pista cheia -->
+  <g fill="#07040d">
+    <path d="M0,200 V160 C8,150 22,150 28,158 L34,124 L38,125 L36,156 C42,148 54,146 62,152 L58,120 L62,119 L68,150 C76,144 88,146 94,154 C100,146 112,144 120,150 L128,116 L132,117 L128,150 C136,144 150,146 156,156 C162,148 176,146 184,152 L182,122 L186,121 L190,152 C198,146 210,148 216,156 C222,148 236,146 244,152 L252,128 L256,129 L250,154 C258,148 272,150 278,158 C284,152 296,152 300,156 V200Z"/>
+    <circle cx="16" cy="150" r="8"/><circle cx="50" cy="140" r="8.5"/><circle cx="80" cy="146" r="8"/><circle cx="108" cy="140" r="8.5"/>
+    <circle cx="142" cy="144" r="8"/><circle cx="172" cy="140" r="8.5"/><circle cx="202" cy="146" r="8"/><circle cx="232" cy="140" r="8.5"/><circle cx="264" cy="148" r="8"/><circle cx="292" cy="146" r="8"/>
+  </g>
+</svg>
