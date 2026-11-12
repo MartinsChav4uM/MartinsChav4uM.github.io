@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gestão Fotográfica — Fotos, vendas e finanças</title>
-  <meta name="description" content="Vendas, galeria com RAW, recibos, eventos e financeiro. O app para Windows que organiza o negócio do fotógrafo, sem planilhas.">
+  <meta name="description" content="Vendas, galeria com RAW, recibos, eventos e financeiro. O app para Windows e Mac que organiza o negócio do fotógrafo, sem planilhas.">
   <meta name="theme-color" content="#0E1015">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <link rel="preload" href="fontes/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
@@ -464,19 +464,19 @@
       <div class="faq-list">
         <details class="reveal">
           <summary>Em quais computadores funciona?</summary>
-          <p>No Windows 10 (versão 2004 ou mais nova) e no Windows 11, 64 bits. O instalador já traz tudo o que o app precisa: não é preciso instalar mais nada, nem ter senha de administrador.</p>
+          <p>No <b>Windows</b> 10 (versão 2004 ou mais nova) e no Windows 11, 64 bits. E no <b>Mac</b>, com macOS 12 ou mais novo, tanto nos modelos com chip Apple (M1 ou mais novo) quanto nos com Intel. O instalador já traz tudo o que o app precisa: não é preciso instalar mais nada, nem ter senha de administrador.</p>
         </details>
         <details class="reveal">
           <summary>Precisa de internet?</summary>
-          <p>Os seus dados ficam sempre no seu computador e nada é enviado para nós. A <b>versão completa</b> funciona sem internet, até num evento sem sinal. A <b>versão de teste</b> precisa de internet ao abrir: ela consulta o GitHub para conferir se a versão está atualizada e a data do período de teste. Nessa consulta não vai nenhum dado seu, só o pedido da versão.</p>
+          <p>Os seus dados de trabalho (vendas, clientes, fotos) ficam sempre no seu computador e nada disso é enviado para nós. A <b>versão completa</b> funciona sem internet, até num evento sem sinal. Na <b>versão de teste</b>, o app precisa de internet ao abrir, para conferir a versão e a data do período de teste. A ativação também usa a internet uma vez, para conferir o código.</p>
         </details>
         <details class="reveal">
           <summary>Como funciona a versão de teste?</summary>
-          <p>É gratuita e tem todas as funções. Ela funciona por 30 dias, contados a partir da primeira vez que você abre o app. Depois disso o app não abre mais, mas os seus dados continuam guardados no computador e voltam a funcionar ao instalar a versão completa. Não pedimos cartão nem cadastro. As regras completas estão nos <a href="termos.html">Termos de uso</a>.</p>
+          <p>Instale o app e faça um cadastro rápido na página de download (nome, e-mail e WhatsApp). O código de ativação aparece na hora: cole na aba <b>Ativação</b> do app e use todas as funções por 30 dias, sem pagar nada e sem cartão. É um período de teste por pessoa e por computador. Depois disso as seções ficam bloqueadas, mas os seus dados continuam guardados e voltam a funcionar com o código da versão completa. As regras completas estão nos <a href="termos.html">Termos de uso</a>.</p>
         </details>
         <details class="reveal">
           <summary>Quais dados vocês coletam?</summary>
-          <p>Nenhum. Este site não usa cookies, não tem formulário e não usa ferramentas de análise ou de publicidade. O app guarda tudo só no seu computador. Os detalhes estão na <a href="privacidade.html">Política de privacidade</a>.</p>
+          <p>Só o necessário para a ativação: o nome, o e-mail e o WhatsApp que você informa no cadastro, e uma identificação do computador (um código sem dados pessoais) quando você ativa. Isso serve para garantir um período de teste por pessoa e para falarmos com você sobre a licença. O site não usa cookies nem ferramentas de análise ou de publicidade, e o app guarda os seus dados de trabalho só no seu computador. Os detalhes estão na <a href="privacidade.html">Política de privacidade</a>.</p>
         </details>
         <details class="reveal">
           <summary>O app mexe nas minhas fotos?</summary>
@@ -488,7 +488,7 @@
         </details>
         <details class="reveal">
           <summary>E se eu trocar de computador?</summary>
-          <p>Faça um backup pelo próprio app e restaure no computador novo. O backup é verificado antes de ser aceito, e o app ainda pode copiar as fotos originais para a pasta de backup.</p>
+          <p>Faça um backup pelo próprio app e restaure no computador novo. O backup é verificado antes de ser aceito, e o app ainda pode copiar as fotos originais para a pasta de backup. Cada código de ativação vale para um computador: ao trocar, <a href="baixar.html#ajuda">fale com a gente</a> para liberar o código no computador novo.</p>
         </details>
         <details class="reveal">
           <summary>O recibo tem valor fiscal?</summary>
@@ -501,33 +501,24 @@
     <section class="cta" id="teste">
       <div class="cta-glow" aria-hidden="true"></div>
       <img src="logo.svg" alt="" class="cta-logo reveal" width="84" height="84">
-      <p class="eyebrow reveal"><span class="dot"></span> Para Windows 10 e 11</p>
+      <p class="eyebrow reveal"><span class="dot"></span> Para Windows e para Mac</p>
       <h2 class="reveal">Baixe a versão<br><em>de teste.</em></h2>
-      <p class="cta-sub reveal">Experimente no seu estúdio com todas as funções. Sem cadastro e sem cartão.</p>
-      <!-- O instalador vem sempre da última release do GitHub (script.js). Trocar o repositório só aqui. -->
-      <div class="download reveal" id="download" data-repo="MartinsChav4uM/gestao-fotografica" data-arquivo="Instalar-Gestao-Fotografica-Teste.exe">
-        <a class="btn btn-accent btn-lg" id="baixar" href="#instalar" aria-disabled="true">Procurando a versão mais recente...</a>
-        <p class="download-info" id="download-info" aria-live="polite">O download vem direto do GitHub, onde ficam as versões publicadas.</p>
-        <p class="download-legal">Ao instalar, você aceita os <a href="termos.html">Termos de uso</a>, que o instalador mostra antes de começar. Leia também a <a href="privacidade.html">Política de privacidade</a>.</p>
-        <p class="download-legal"><a href="#instalar">Veja o passo a passo da instalação ↓</a></p>
+      <p class="cta-sub reveal">Experimente no seu estúdio com todas as funções. Sem cartão: faça o cadastro e receba o código na hora.</p>
+      <!-- Cada botão abre, em outra aba, a página com o download e o passo a passo daquele sistema (baixar.html). -->
+      <div class="download reveal" id="download">
+        <div class="so-botoes">
+          <a class="btn btn-accent btn-lg so-btn" href="baixar.html?so=windows" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/></svg>
+            <span><small>Baixar para</small>Windows</span>
+          </a>
+          <a class="btn btn-accent btn-lg so-btn" href="baixar.html?so=mac" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M2.5 18.5h19"/></svg>
+            <span><small>Baixar para</small>Mac</span>
+          </a>
+        </div>
+        <p class="download-info">Windows 10 e 11 · macOS 12 ou mais novo (chip Apple e Intel)</p>
+        <p class="download-legal">Cada botão abre uma página com o download e o passo a passo da instalação. Ao instalar, você aceita os <a href="termos.html">Termos de uso</a>. Leia também a <a href="privacidade.html">Política de privacidade</a>.</p>
       </div>
-    </section>
-
-    <!-- Como instalar -->
-    <section class="install" id="instalar">
-      <header class="sec-head">
-        <p class="eyebrow">Instalação</p>
-        <h2 class="reveal">Como instalar,<br><em>passo a passo.</em></h2>
-      </header>
-      <ol class="install-steps">
-        <li class="reveal"><b>Baixe o instalador.</b> Clique em “Baixar” acima. O arquivo <code>Instalar-Gestao-Fotografica-Teste.exe</code> vai para a pasta Downloads. Se o navegador perguntar, escolha “Manter”.</li>
-        <li class="reveal"><b>Abra o arquivo.</b> Dê dois cliques nele, na pasta Downloads ou na lista de downloads do navegador.</li>
-        <li class="reveal"><b>Se aparecer “O Windows protegeu o computador”</b> (uma tela azul), clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>. Isso acontece porque o programa é novo e ainda não tem uma assinatura digital paga. Ele não traz vírus nem propaganda.</li>
-        <li class="reveal"><b>Leia e aceite os Termos de uso</b> na primeira tela do instalador, e depois clique em <b>Avançar</b>, <b>Avançar</b> e <b>Instalar</b>. Não precisa de senha de administrador. Se o Windows pedir para instalar o “Visual C++”, clique em <b>Sim</b>: é um componente da própria Microsoft.</li>
-        <li class="reveal"><b>Abra o app.</b> No final, deixe marcado “Abrir o Gestão Fotográfica agora” e clique em <b>Concluir</b>. Depois ele fica no menu Iniciar e, se você quiser, na Área de Trabalho. O manual de uso está em Configurações.</li>
-        <li class="reveal"><b>Conectado à internet</b> na hora de abrir: a versão de teste confere a versão no GitHub. Se houver uma versão nova, o app avisa. É só baixar aqui de novo e instalar por cima, e os seus dados são mantidos.</li>
-      </ol>
-      <p class="install-note reveal">Para desinstalar: Configurações do Windows › Aplicativos › Gestão Fotográfica › Desinstalar. O desinstalador pergunta se você também quer apagar os dados. Suas fotografias originais e seus backups nunca são apagados.</p>
     </section>
   </main>
 

@@ -350,28 +350,4 @@
   addEventListener('resize', () => { onScroll(); placePill(); });
   onScroll();
 
-  /* ---------- Download: sempre o instalador da última release do GitHub ---------- */
-  const dl = $('#download');
-  if (dl) {
-    const repo = dl.dataset.repo, arquivo = dl.dataset.arquivo;
-    const botao = $('#baixar'), info = $('#download-info');
-    const liberar = (href, texto) => { botao.href = href; botao.textContent = texto; botao.removeAttribute('aria-disabled'); };
-    fetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } })
-      .then(r => r.status === 404 ? null : r.ok ? r.json() : Promise.reject(r.status))
-      .then(rel => {
-        const asset = rel && (rel.assets || []).find(a => a.name === arquivo);
-        if (!asset) { botao.textContent = 'Download em breve'; info.textContent = 'A primeira versão ainda está sendo publicada. Volte em breve.'; return; }
-        const versao = rel.tag_name.replace(/^v/i, '');
-        const mb = (asset.size / 1048576).toFixed(0);
-        const data = new Date(rel.published_at).toLocaleDateString('pt-BR');
-        const sha = (rel.body || '').match(/SHA-256:\s*([0-9a-f]{64})/i);
-        liberar(asset.browser_download_url, `Baixar a versão ${versao}`);
-        info.innerHTML = `Versão de teste ${versao} · ${mb} MB · publicada em ${data}` +
-          (sha ? `<br><small>Código de verificação (SHA-256): <code>${sha[1].toLowerCase()}</code></small>` : '');
-      })
-      .catch(() => { // GitHub fora do ar ou bloqueado: o link "latest" sempre aponta para o instalador mais novo
-        liberar(`https://github.com/${repo}/releases/latest/download/${arquivo}`, 'Baixar a versão de teste');
-        info.textContent = 'Não foi possível mostrar o número da versão agora, mas o link baixa sempre a mais recente.';
-      });
-  }
 })();
